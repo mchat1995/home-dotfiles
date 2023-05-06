@@ -1,0 +1,443 @@
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+#set $term st
+#set $term alacritty
+set $term wezterm
+# Your preferred application launcher
+# Note: it's recommended that you pass the final command to sway
+bindsym $mod+d exec dmenu-wl_run -i -m DP-1
+#set $menu dmenu_path | dmenu |  xargs swaymsg exec --
+#set $menu rofi -show
+#set $menu wofi --show run
+#set $menu dmenu_path | wofi --show drun -i | xargs swaymsg exec --¬ 
+
+exec waybar
+
+output * bg /home/m/.config/wall.png fill
+include "$HOME/.cache/wal/colors-sway"
+client.focused $color0 $background $foreground $color7 $background
+output HDMI-A-1 pos 12670 3990 res 1920x1080@75Hz
+output DP-2 pos 9030 3370 transform 270 res 1920x1080@144Hz
+#output DP-2 pos 8190 3990 res 1920x1080@144Hz
+output DP-1 pos 10110 3630 res 2560x1440@144Hz
+
+#Borders
+#default_border border ##only focused window
+#default_border normal ##shows all borders
+default_border none
+
+
+### Key bindings
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+#bindsym $mod+d exec $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+r reload
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutd$
+mode "$mode_system" {
+    bindsym l exec $Locker, mode "default"
+    bindsym e exec --no-startup-id exec swaymsg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Insert mode "$mode_system"
+#
+# Screenshots
+#
+  # Take a screenshot with all output and save it into screenshots
+  #bindsym Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png
+  bindsym Print exec grim ~/Pictures/A+220-1101/$(date +%Y-%m-%d_%H-%M-%S).png
+
+
+  #bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+  # Take a Screenshot with the region select
+  #bindsym Shift+Print exec grim -g "$(slurp)" ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+
+
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+#    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+# Workspaces:
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3 
+bindsym $mod+4 workspace number 4 
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Control+1 workspace 11
+bindsym $mod+Control+2 workspace 12
+bindsym $mod+Control+3 workspace 13
+bindsym $mod+Control+4 workspace 14
+bindsym $mod+Control+5 workspace 15
+bindsym $mod+Control+6 workspace 16
+bindsym $mod+Control+7 workspace 17
+bindsym $mod+Control+8 workspace 18
+bindsym $mod+Control+9 workspace 19
+bindsym $mod+Control+0 workspace 20
+bindsym $mod+Control+s workspace 21
+bindsym $mod+Control+n workspace 22
+bindsym $mod+Control+e workspace 23
+bindsym $mod+Control+d workspace 24
+
+#
+#Move to workspaces
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Control+Shift+1 move container to workspace number 11
+bindsym $mod+Control+Shift+2 move container to workspace number 12
+bindsym $mod+Control+Shift+3 move container to workspace number 13
+bindsym $mod+Control+Shift+4 move container to workspace number 14
+bindsym $mod+Control+Shift+5 move container to workspace number 15
+bindsym $mod+Control+Shift+6 move container to workspace number 16
+bindsym $mod+Control+Shift+7 move container to workspace number 17
+bindsym $mod+Control+Shift+8 move container to workspace number 18
+bindsym $mod+Control+Shift+9 move container to workspace number 19
+bindsym $mod+Control+Shift+0 move container to workspace number 20
+bindsym $mod+Control+Shift+s move container to workspace number 21
+bindsym $mod+Control+Shift+n move container to workspace number 22
+bindsym $mod+Control+Shift+e move container to workspace number 23
+bindsym $mod+Control+Shift+d move container to workspace number 24
+
+exec swayidle -w \
+	timeout 1800 'swaylock' \
+	timeout 1805 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"'
+
+# Switch to workspace
+   #Bind programs and bind it to workspaces
+#Assigns
+bindsym $mod+f exec MOZ_ENABLE_WAYLAND=1 firefox
+assign [app_id="firefox"] 1
+
+##Launches pavucontrol
+bindsym $mod+control+f exec MOZ_ENABLE_WAYLAND=1 firefox-nightly
+assign [app_id="firefoxnightly"] 3
+assign [class="firefoxnightly"] 3
+assign [title="firefoxnightly"] 3
+
+for_window [class="(?i)firefox*" title="^Picture-in-Picture$"] \
+    floating enable, move position 877 450, sticky enable
+
+
+bindsym $mod+Shift+u exec thunar
+assign [app_id="thunar"] 4
+
+bindsym $mod+control+j exec jdownloader
+assign [class="JDownloader"] 5
+assign [class="org-jdownloader-update-launcher-JDLauncher"] 5
+assign [title="JDownloader 2"] 5
+
+#Moves container to workspace 6
+# Launches Kodi
+bindsym $mod+control+k exec kodi
+assign [app_id="Kodi"] 6
+
+#Moves container to workspace 6
+#Launches mpv
+bindsym $mod+m exec mpv --gpu-context=wayland $(wl-paste -p)
+assign [app_id="mpv"] 6
+
+#Moves container to workspace 6
+#Launches vlc
+bindsym $mod+shift+v exec vlc $(wl-paste -p)
+assign [app_id="Vlc"] 6
+assign [app_id="vlc"] 6
+assign [class="vlc"] 6
+#$(xclip -o)
+
+#Moves container to workspace 7
+#Launches Discord
+bindsym $mod+shift+d discord
+#assign [class="discord"] 7
+assign [class="(?i)Discord"] 7
+#assign [app_id="discord"] 7
+#for_window [app_id="discord"] 7
+#for_window [class="discord"] 7
+assign [title="^Discord$"] 7
+
+#Moves container to workspace 8
+#Launches steam with bunch of floating stuff enabled
+bindsym $mod+shift+s  exec VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json steam-native
+assign [class="Steam"] 8
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+ for_window [class="Steam" title="^Friends$"] floating enable
+ for_window [class="Steam" title="^Steam - News"] floating enable
+ for_window [class="Steam" title=".* - Chat"] floating enable
+ for_window [class="Steam" title="^Settings$"] floating enable
+ for_window [class="Steam" title=".* - event started"] floating enable
+ for_window [class="Steam" title=".* CD key"] floating enable
+ for_window [class="Steam" title="^Steam - Self Updater$"] floating enable
+ for_window [class="Steam" title="^Screenshot Uploader$"] floating enable
+ for_window [class="Steam" title="^Steam Guard - Computer Authorization Required$"] floating enable
+ for_window [class="^Steam Keyboard$"] floating enable
+
+#Moves container to workspace 9
+#Launches calibre
+bindsym $mod+control+c exec calibre
+assign [app_id="calibre"] 9
+
+#Moves container to workspace 9
+#Launches zathura
+bindsym $mod+control+z exec zathura
+assign [app_id="zathura"] 9
+
+# Launch virt-manager
+bindsym $mod+Shift+m exec virt-manager
+assign [app_id="virt-manager"] 10
+
+#Move container to workspace 11
+#keepassxc
+bindsym $mod+shift+x exec keepassxc
+assign [app_id="keepassxc"] 11
+
+bindsym $mod+b exec bitwarden-desktop
+assign [class="Bitwarden"] 11
+
+#Moves container to workspace 12
+#Lutris
+bindsym $mod+control+i exec pinta
+assign [app_id="Pinta"] 12
+
+#bindsym $mod+shift+c exec google-chrome-beta
+assign [app_id="Google-chrome"] 13
+#assign [app_id="Google-chrome"] 3
+#assign [app_id="Google-chrome"] 3
+assign [class="Google-chrome"] 13
+assign [app_id="google-chrome"] 13
+#assign [app_id="chromium"] 18
+#assign [class="chromium"] 18
+
+#Moves container to workspace 15
+# Launches qbittorent
+bindsym $mod+control+q exec qBittorent
+assign [app_id="qBittorrent"] 15
+
+#librewolf incognito
+bindsym $mod+shift+i exec librewolf --private-window
+assign [app_id="(librewolf --private-window)"] $ws17
+#for_window [class=".*\(Private Window\).*"] 17
+
+#streamlink-twitch-gui
+bindsym $mod+shift+w exec streamlink-twitch-gui 
+assign [class="streamlink-twitch-gui"] 16
+
+
+#Moves container to workspace 19
+#Launches visual-studio-code
+assign [app_id="^Code$"] 19
+assign [class="code-oss"] 19
+for_window [app_id="^VSCodium$" title="VSCodium"] 19
+for_window [class="^VSCodium$" title="VSCodium"] 19
+for_window [class="vscodium" title="vscodium"] 19
+assign [class="vscodium"] 19
+assign [app_id="vscodium"] 19
+assign [app_id="Vscodium"] 19
+#Moves container to workspace 20
+##Launches pavucontrol
+bindsym $mod+control+p exec pavucontrol
+assign [app_id="pavucontrol"] 20
+
+#Moves container to workspace 20
+#launch bleachbit
+bindsym $mod+control+b exec bleachbit
+assign [app_id="bleachbit"] 20
+
+bindsym $mod+o exec obsidian
+assign [class="obsidian"] 22
+
+#bindsym $mod+shift+e exec mailspring
+#assign [class="Mailspring"] 23
+
+# Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+t splith
+    bindsym $mod+v splitv
+    # Switch the current container between different layout styles
+    bindsym $mod+g layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+    # Make the current focus fullscreen
+    bindsym $mod+Shift+f fullscreen
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+include /etc/sway/config.d/
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+}
+
+exec_always fcitx5 -d
+#exec_always blueman-applet
+exec mako
+exec wal -R
+exec xrdb /home/m/.Xresources
+#exec_always redshift -m wayland  
+exec /usr/lib/geoclue-2.0/demos/agent
+exec_always kdeconnect-indicator
+#exec_always redshift-gtk
+exec_always wl-clipboard-manager -t
+#exec wlanthy
+
+#polkit
+#exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon-locale
+#exec /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+
+workspace 1 output DP-1
+#workspace 2 output HDMI-A-1
+workspace 2 output DP-1
+workspace 3 output DP-1
+#workspace 3 output HDMI-A-1
+#workspace 4 output HDMI-A-1
+workspace 4 output DP-1
+workspace 5 output DP-1
+#workspace 5 output HDMI-A-1
+workspace 6 output DP-1
+#workspace 6 output HDMI-A-1
+#workspace 7 output DP-1
+workspace 7 output HDMI-A-1
+workspace 8 output DP-1
+#workspace 8 output HDMI-A-1
+#workspace 9 output HDMI-A-1
+workspace 9 output DP-2
+workspace 10 output DP-1
+workspace 11 output DP-1
+workspace 12 output DP-1
+workspace 13 output HDMI-A-1
+#workspace 14 output DP-3
+workspace 14 output HDMI-A-1
+workspace 15 output DP-1
+workspace 16 output DP-1
+workspace 17 output DP-1
+#workspace 17 output HDMI-A-1
+workspace 18 output DP-2
+#workspace 19 output HDMI-A-1
+workspace 19 output DP-1
+workspace 20 output DP-1
+workspace 21 output DP-1
+workspace 22 output DP-1
+workspace 23 output DP-1
+workspace 24 output DP-2
+
+#Autostart workspaces#
+exec firefox && sway '[app_id="firefox"]' 1
+exec firefox-nightly && sway '[app_id="firefox-nightly"]' 3
+exec google-chrome-stable && sway '[app_id="google-chrome"]' 13
+#exec chromium && sway '[app_id="chromium"]' 18
+exec bitwarden-desktop && sway '[class="Bitwarden"]' 11
+exec VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json steam-native && sway 8
+exec streamlink-twitch-gui && sway '[class="streamlink-twitch-gui"]' 16
+exec vlc && sway '[app_id="vlc"]' 6
+exec swaymsg "workspace 21; exec cider;"
+exec swaymsg "workspace 22; exec obsidian;"
+exec swaymsg "worksapce 23; exec Mailspring;"
+exec Mailspring && sway assign [class="Mailspring"] 23

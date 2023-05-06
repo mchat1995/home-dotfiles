@@ -1,0 +1,133 @@
+! 2022-11-08 https://www.rakuten.co.jp
+www.rakuten.co.jp###bigBannerWidget > .r-slideshow-pc > .r-slideshow-body > .r-slideshow-items > .r-slideshow-page > .r-slideshow-item
+> [href^="https://rd.rakuten.co.jp/c/"] > .r-slideshow-item-image
+www.rakuten.co.jp###bigBannerWidget > .r-slideshow-pc
+www.rakuten.co.jp###wrapper > .r-slideshow
+
+! 2022-11-13 https://www.amazon.co.jp
+||m.media-amazon.com/images/G/09/2022/MVD/NBC/minions_sidenavi_movie.gif$image
+
+i.ytimg.com
+ytimg.com
+
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title*="#short"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#short"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#shorts"i]:upward(ytd-grid-video-renderer)
+
+! YT Subscriptions tab - Remove all vids shorter than 2 minutes
+youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer>#text[aria-label^="1 minute"], ytd-browse[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer>#text:not([aria-label*="hour"], [aria-label*="minute"])[aria-label$="seconds"]:upward(ytd-grid-video-renderer)
+
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title*="#Set-Reminders"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#short"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#shorts"i]:upward(ytd-grid-video-renderer)
+
+www.youtube.com###items > ytd-grid-video-renderer.ytd-grid-renderer.style-scope:contains(Set reminder)
+
+
+redgifs.com##.player-bottom
+redgifs.com##.sound-control
+
+||glassdoor.com^*/gd-user-hardsell-overlay.
+
+reddit.com##.redesignbetabar-js
+
+! 2022-01-03 https://www.reddit.com
+www.reddit.com##._1yF58T8cn1Lb1f5no79sl8._2RkQc9Gtsq3cPQNZLYv4zc
+www.reddit.com##._2L5G9B5yaoqW3IegiYN-FL
+
+! 2022-01-20 https://www.last.fm
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/b3e887f4deb401e8964126b67148614b$image
+||lastfm.freetls.fastly.net/i/u/400x300/67d407cfc4e548a0a8b9c1bbc8564e32$image
+www.last.fm##.footer
+||lastfm.freetls.fastly.net/i/u/400x300/*$image
+||lastfm.freetls.fastly.net/i/u/400x300/*$image
+www.last.fm##.js-link-block-cover-link.features-footer-cover-link
+www.last.fm##.async-content-loaded.inverted-bg.lazy-features-footer
+
+i.ytimg.com
+ytimg.com
+
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title*="#short"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#short"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#shorts"i]:upward(ytd-grid-video-renderer)
+
+! YT Subscriptions tab - Remove all vids shorter than 2 minutes
+youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer>#text[aria-label^="1 minute"], ytd-browse[page-subtype="subscriptions"] ytd-thumbnail-overlay-time-status-renderer>#text:not([aria-label*="hour"], [aria-label*="minute"])[aria-label$="seconds"]:upward(ytd-grid-video-renderer)
+
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title*="#Set-Reminders"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#short"i]:upward(ytd-grid-video-renderer)
+youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#shorts"i]:upward(ytd-grid-video-renderer)
+
+www.youtube.com###items > ytd-grid-video-renderer.ytd-grid-renderer.style-scope:contains(Set reminder)
+
+
+redgifs.com##.player-bottom
+redgifs.com##.sound-control
+
+||glassdoor.com^*/gd-user-hardsell-overlay.
+
+reddit.com##.redesignbetabar-js
+
+! 2022-01-03 https://www.reddit.com
+www.reddit.com##._1yF58T8cn1Lb1f5no79sl8._2RkQc9Gtsq3cPQNZLYv4zc
+www.reddit.com##._2L5G9B5yaoqW3IegiYN-FL
+
+! 2022-01-20 https://www.last.fm
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/47d90f08e3332ca73cfae87cf9e53ab3$image
+||lastfm.freetls.fastly.net/i/u/400x300/b3e887f4deb401e8964126b67148614b$image
+||lastfm.freetls.fastly.net/i/u/400x300/67d407cfc4e548a0a8b9c1bbc8564e32$image
+www.last.fm##.footer
+||lastfm.freetls.fastly.net/i/u/400x300/*$image
+||lastfm.freetls.fastly.net/i/u/400x300/*$image
+www.last.fm##.js-link-block-cover-link.features-footer-cover-link
+www.last.fm##.async-content-loaded.inverted-bg.lazy-features-footer
+
+! 2022-12-02 https://www.twitch.tv
+www.twitch.tv##.community-highlight-stack__backlog-card.bjKgSw.Layout-sc-1xcs6mc-0
+
+twitter.com##body:style(overflow: auto !important;)
+twitter.com##.r-16wqof.r-1dqxon3.r-16y2uox.r-kemksi.css-1dbjc4n
+twitter.com##.r-g6jmlv.r-ipm5af.r-1xcajam.r-xr3zp9.r-1pjcn9w.r-1777fci.r-1pi2tsx.r-18u37iz.r-1kihuf0.r-1awozwy.css-1dbjc4n > .r-ipm5af.r-zchlnj.r-1xcajam.r-1d2f490.r-1p0dtai.r-11z020y.css-1dbjc4n
+twitter.com##.r-g6jmlv.r-ipm5af.r-1xcajam.r-xr3zp9.r-1pjcn9w.r-1777fci.r-1pi2tsx.r-18u37iz.r-1kihuf0.r-1awozwy.css-1dbjc4n
+twitter.com##body:style(overflow: auto !important;)
+
+! 2023-01-10 https://www.youtube.com
+www.youtube.com###foreground-content
+
+! 2023-02-20 https://www.youtube.com
+www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
+
+jpopsingles.eu##body > style:has-text(/\w+-blackout\b/):remove()
+
+jpopsingles.eu##style[id$="-css"]:remove()
+
+! 2023-03-21 https://www.youtube.com
+www.youtube.com###dismissible > .ytd-rich-shelf-renderer.style-scope
+www.youtube.com###content > .ytd-rich-section-renderer.style-scope
+
+www.youtube.com##ytd-guide-renderer a.yt-simple-endpoint path[d^="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33"]:upward(ytd-guide-entry-renderer)
+www.youtube.com##ytd-mini-guide-renderer a.yt-simple-endpoint path[d^="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33"]:upward(ytd-mini-guide-entry-renderer)
+www.youtube.com##ytd-browse #dismissible ytd-rich-grid-slim-media[is-short]:upward(ytd-rich-section-renderer)
+www.youtube.com##ytd-browse[page-subtype="home"] .ytd-thumbnail[href^="/shorts/"]:upward(ytd-rich-item-renderer)
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] .ytd-thumbnail[href^="/shorts/"]:upward(ytd-grid-video-renderer,ytd-rich-item-renderer)
+www.youtube.com##ytd-search .ytd-thumbnail[href^="/shorts/"]:upward(ytd-video-renderer)
+www.youtube.com##ytd-watch-next-secondary-results-renderer .ytd-thumbnail[href^="/shorts/"]:upward(ytd-compact-video-renderer,ytd-shelf-renderer)
+www.youtube.com##ytd-watch-next-secondary-results-renderer ytd-reel-shelf-renderer
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer .ytd-thumbnail[href^="/shorts/"]:upward(ytd-item-section-renderer)
+www.youtube.com##ytd-browse[page-subtype="channels"] #contents.ytd-reel-shelf-renderer:upward(ytd-item-section-renderer)
+www.youtube.com##ytd-search #contents ytd-reel-shelf-renderer
+m.youtube.com##ytm-reel-shelf-renderer
+m.youtube.com##ytm-pivot-bar-renderer div.pivot-shorts:upward(ytm-pivot-bar-item-renderer)
+m.youtube.com##ytm-browse ytm-item-section-renderer ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-video-with-context-renderer)
+m.youtube.com##ytm-browse ytm-item-section-renderer ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-compact-video-renderer)
+m.youtube.com##ytm-search ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-compact-video-renderer)
+m.youtube.com##ytm-single-column-watch-next-results-renderer ytm-thumbnail-overlay-time-status-renderer span:has-text(/^(0:\d\d|1:0\d)$/):upward(ytm-video-with-context-renderer)
+
+
