@@ -46,4 +46,6 @@ youtube.com##ytd-browse[page-subtype="subscriptions"] #video-title[title~="#shor
 
 www.youtube.com###items > ytd-grid-video-renderer.ytd-grid-renderer.style-scope:contains(Set reminder)
 
+https://www.youtube.com/youtubei/v1/updated_metadata*
 
+youtube.com##+js(set-attr, yt-animated-rolling-number, should-animate, false)
